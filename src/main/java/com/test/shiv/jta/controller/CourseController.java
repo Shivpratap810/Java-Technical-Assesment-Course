@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/courses")
@@ -20,9 +19,9 @@ public class CourseController {
         return courseService.getAllCourses();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Course> getCourseById(@PathVariable Long id) {
-        return courseService.getCourseById(id);
+    @GetMapping("/{courseId}")
+    public Course getCourseById(@PathVariable Long courseId) {
+        return courseService.getCourseById(courseId);
     }
 
     @PostMapping
@@ -30,13 +29,13 @@ public class CourseController {
         return courseService.addCourse(course);
     }
 
-    @PutMapping("/{id}")
-    public Course updateCourse(@PathVariable Long id, @RequestBody Course updatedCourse) {
-        return courseService.updateCourse(id, updatedCourse);
+    @PutMapping("/{courseId}")
+    public Course updateCourse(@PathVariable Long courseId, @RequestBody Course updatedCourse) {
+        return courseService.updateCourse(courseId, updatedCourse);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteCourse(@PathVariable Long id) {
-        courseService.deleteCourse(id);
+    @DeleteMapping("/{courseId}")
+    public void deleteCourse(@PathVariable Long courseId) {
+        courseService.deleteCourse(courseId);
     }
 }

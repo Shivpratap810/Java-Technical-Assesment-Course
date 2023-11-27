@@ -2,7 +2,6 @@ package com.test.shiv.jta.repository;
 
 import com.test.shiv.jta.entity.Course;
 import com.test.shiv.jta.entity.Enrollment;
-import com.test.shiv.jta.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
